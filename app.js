@@ -1,6 +1,24 @@
 function mostFrequentWord(words) {
     // your code here
     // `words` is an array of strings.
+    var timesWord = {};
+    for (var i = 0; i <= words.length; i++) {
+        if (words[i] in timesWord) {
+            timesWord[words[i]]++;
+        } else {
+            timesWord[words[i]] = 1;
+        }
+    }
+    var maxCount = timesWord[maxWord];
+    var maxWord = Object.keys(timesWord)[0];
+    for (var word in timesWord) {
+        if (timesWord[word] > maxCount) {
+            maxCount = timesWord[word];
+            maxWord = word;
+
+        }
+    }
+    return maxWord;
 }
 
 
